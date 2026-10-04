@@ -1,0 +1,1185 @@
+{
+    "info": {
+        "_postman_id": "be_cnpm_api_v1",
+        "name": "BE_CNPM API",
+        "description": "API Collection cho hệ thống quản lý nhà hàng giao hàng",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Admin Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/login",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "login"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Bình Luận",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/binh-luan",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "binh-luan"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"noi_dung\": \"Bình luận test\",\n  \"mon_an_id\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/binh-luan/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "binh-luan", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"noi_dung\": \"Cập nhật bình luận\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/binh-luan/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "binh-luan", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Change Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"trang_thai\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/binh-luan/change-status",
+                            "host": ["{{base_url}}"],
+                            "path": [
+                                "api",
+                                "admin",
+                                "binh-luan",
+                                "change-status"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/binh-luan/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "binh-luan", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Đánh Giá",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/danh-gia",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "danh-gia"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"diem\": 5,\n  \"nhan_xet\": \"Rất ngon\",\n  \"don_hang_id\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/danh-gia/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "danh-gia", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"diem\": 4\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/danh-gia/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "danh-gia", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/danh-gia/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "danh-gia", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Khuyến Mãi",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khuyen-mai",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khuyen-mai"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ten\": \"Khuyến mãi\",\n  \"mo_ta\": \"Mô tả\",\n  \"kieu_giam\": 1,\n  \"so_tien_giam\": 10000\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khuyen-mai/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khuyen-mai", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"so_tien_giam\": 20000\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khuyen-mai/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khuyen-mai", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khuyen-mai/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": [
+                                "api",
+                                "admin",
+                                "khuyen-mai",
+                                "delete",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Món Ăn",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/mon-an",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "mon-an"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ten\": \"Phở Bò\",\n  \"mo_ta\": \"Mô tả\",\n  \"gia\": 50000,\n  \"danh_muc_id\": 1,\n  \"nha_hang_id\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/mon-an/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "mon-an", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"gia\": 60000\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/mon-an/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "mon-an", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/mon-an/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "mon-an", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Đơn Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/don-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "don-hang"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"khach_hang_id\": 1,\n  \"nha_hang_id\": 1,\n  \"tong_tien\": 150000,\n  \"trang_thai\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/don-hang/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "don-hang", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"trang_thai\": 2\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/don-hang/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "don-hang", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/don-hang/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "don-hang", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Khách Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khach-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khach-hang"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ho_ten\": \"Nguyễn Văn A\",\n  \"email\": \"a@example.com\",\n  \"so_dien_thoai\": \"0912345678\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khach-hang/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khach-hang", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"ho_ten\": \"Nguyễn Văn A Updated\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khach-hang/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khach-hang", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khach-hang/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": [
+                                "api",
+                                "admin",
+                                "khach-hang",
+                                "delete",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Nhà Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/nha-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "nha-hang"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ten\": \"Nhà Hàng\",\n  \"dia_chi\": \"123 Đường\",\n  \"so_dien_thoai\": \"0912345678\",\n  \"khu_vuc_id\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/nha-hang/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "nha-hang", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"ten\": \"Nhà Hàng Updated\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/nha-hang/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "nha-hang", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/nha-hang/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "nha-hang", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Shipper",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/shipper",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "shipper"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ho_ten\": \"Shipper\",\n  \"email\": \"shipper@example.com\",\n  \"so_dien_thoai\": \"0987654321\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/shipper/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "shipper", "create"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"ho_ten\": \"Shipper Updated\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/shipper/update",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "shipper", "update"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/shipper/delete/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "shipper", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Thanh Toán",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/thanh-toan",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "thanh-toan"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"don_hang_id\": 1,\n  \"phuong_thuc\": \"1\",\n  \"so_tien\": 150000\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/thanh-toan/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "thanh-toan", "create"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Theo Dõi Đơn Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/theo-doi-don-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "theo-doi-don-hang"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Vị Trí Shipper",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/vi-tri-shipper",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "vi-tri-shipper"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"shipper_id\": 1,\n  \"lat\": 10.7769,\n  \"lng\": 106.6966\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/vi-tri-shipper/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "vi-tri-shipper", "create"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Coupon Khách Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/coupon-khach-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "coupon-khach-hang"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Mã Giảm Giá",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/ma-giam-gia",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "ma-giam-gia"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ma\": \"GIAM10\",\n  \"so_tien_giam\": 10000,\n  \"tong_so_luong\": 100,\n  \"trang_thai\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/ma-giam-gia/create",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "ma-giam-gia", "create"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Chi Tiết Đơn Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/chi-tiet-don-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "chi-tiet-don-hang"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Khu Vực Giao Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/khu-vuc-giao-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "khu-vuc-giao-hang"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Danh Mục Món Ăn",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/danh-muc-mon-an",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "danh-muc-mon-an"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Địa Chỉ Khách Hàng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/dia-chi-khach-hang",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "dia-chi-khach-hang"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Người Dùng",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/nguoi-dung",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "nguoi-dung"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Quản Trị Viên",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/quan-tri-vien",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "quan-tri-vien"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Phiên Chat AI",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/phien-chat-ai",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "phien-chat-ai"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tin Nhắn AI",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/tin-nhanai",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "tin-nhanai"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Thông Báo",
+            "item": [
+                {
+                    "name": "Get All",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/admin/thong-bao",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "admin", "thong-bao"]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000",
+            "type": "string"
+        },
+        {
+            "key": "token",
+            "value": "",
+            "type": "string"
+        }
+    ]
+}
