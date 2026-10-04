@@ -9,6 +9,19 @@ use Illuminate\Http\Request;
 
 class ShipperController extends Controller
 {
+     public function putShipper(ShipperUpdateRequest $request)
+    {
+        Shipper::where('id', $request->id)->update([
+            'id_nguoi_dung'         => $request->id_nguoi_dung,
+            'bien_so_xe'            => $request->bien_so_xe,
+            'loai_xe'               => $request->loai_xe,
+            'so_cccd'               => $request->so_cccd,
+            'san_sang_nhan_don'     => $request->san_sang_nhan_don,
+            'diem_danh_gia_tb'      => $request->diem_danh_gia_tb,
+            'trang_thai'            => $request->trang_thai,
+        ]);
+        return response()->json(['status' => 1, 'message' => 'Cập nhật shipper thành công'], 200);
+    }
     public function deleteShipper($id)
     {
         $shipper = Shipper::find($id);
